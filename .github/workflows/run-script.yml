@@ -35,6 +35,7 @@ jobs:
       - name: Execute script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ROOT: ${{ secrets.ROOT }}
           
           # Script also works without $LOCALMAVEN=1
           LOCALMAVEN: 1
@@ -70,6 +71,7 @@ jobs:
       - name: Execute script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ROOT: ${{ secrets.ROOT }}
         run: |
           chmod +x ./build-from-prebuilt.sh
           ./build-from-prebuilt.sh
