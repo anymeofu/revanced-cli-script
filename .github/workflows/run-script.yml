@@ -42,6 +42,12 @@ jobs:
           chmod +x ./build-from-source.sh
           ./build-from-source.sh
           ls
+        
+      - uses: actions/upload-artifact@v2
+        name: Push apk to artifact
+        with:
+          name: revanced-source.apk
+          path: './revanced.apk'
 
   build-from-prebuilt:
     runs-on: ubuntu-latest
@@ -68,3 +74,9 @@ jobs:
           chmod +x ./build-from-prebuilt.sh
           ./build-from-prebuilt.sh
           ls
+          
+      - uses: actions/upload-artifact@v2
+        name: Push apk to artifact
+        with:
+          name: revanced-prebuilt.apk
+          path: './revanced.apk'
